@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'net.researchgate:gradle-release:2.3.0'
+        classpath 'net.researchgate:gradle-release:2.6.0'
     }
 }
 
@@ -24,7 +24,21 @@ allprojects {
     }
 
     release {
-        tagTemplate = '$name-$version'
+        tagTemplate = '$version'
+        preTagCommitMessage = '$version'
+        tagCommitMessage = '$version'
+        newVersionCommitMessage = '$version'
+        scmAdapters = [
+            net.researchgate.release.GitAdapter,
+        ]
+        git {
+            requireBranch = 'master'
+            pushToRemote = 'origin'
+            pushToBranchPrefix = ''
+            commitVersionFileOnly = false
+            signTag = false
+        }
+
     }
 
     task(startmessage) << {
