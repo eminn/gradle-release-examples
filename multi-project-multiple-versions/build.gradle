@@ -32,9 +32,9 @@ allprojects {
 
 
         tagTemplate = '$version'
-        preTagCommitMessage = '$version'
-        tagCommitMessage = '$version'
-        newVersionCommitMessage = '$version'
+        preTagCommitMessage = ''
+        tagCommitMessage = ''
+        newVersionCommitMessage = ''
         scmAdapters = [
             net.researchgate.release.GitAdapter,
         ]
