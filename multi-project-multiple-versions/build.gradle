@@ -24,6 +24,13 @@ allprojects {
     }
 
     release {
+        failOnCommitNeeded = false
+        failOnPublishNeeded = false
+        failOnSnapshotDependencies = true
+        failOnUnversionedFiles = true
+        failOnUpdateNeeded = false
+
+
         tagTemplate = '$version'
         preTagCommitMessage = '$version'
         tagCommitMessage = '$version'
