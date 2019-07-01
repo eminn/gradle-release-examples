@@ -29,7 +29,6 @@ allprojects {
         failOnSnapshotDependencies = true
         failOnUnversionedFiles = true
         failOnUpdateNeeded = false
-        pushReleaseVersionBranch = true
 
         tagTemplate = '$version'
         preTagCommitMessage = ''
@@ -39,7 +38,7 @@ allprojects {
             net.researchgate.release.GitAdapter,
         ]
         git {
-            requireBranch = 'release'
+            requireBranch = '0.1'
             pushToRemote = 'origin'
             pushToBranchPrefix = ''
             commitVersionFileOnly = false
