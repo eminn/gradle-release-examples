@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'net.researchgate:gradle-release:2.6.0'
+        classpath 'net.researchgate:gradle-release:2.8.1'
     }
 }
 
@@ -29,7 +29,7 @@ allprojects {
         failOnSnapshotDependencies = true
         failOnUnversionedFiles = true
         failOnUpdateNeeded = false
-        pushReleaseVersionBranch = true
+        pushReleaseVersionBranch = '0.5'
 
         tagTemplate = '$version'
         preTagCommitMessage = ''
@@ -39,7 +39,7 @@ allprojects {
             net.researchgate.release.GitAdapter,
         ]
         git {
-            requireBranch = 'release'
+            requireBranch = 'master'
             pushToRemote = 'origin'
             pushToBranchPrefix = ''
             commitVersionFileOnly = false
